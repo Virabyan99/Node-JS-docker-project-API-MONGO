@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "nodemon --env-file=.env.development src/index.js",
+    "docker:build": "docker build -t my-app/express-api:latest-dev .",
+    "docker:run": "docker run -v \"$PWD.Path:/user/src/app\" --name api -p 3000:3000 my-app/express-api:latest-dev",
+    "docker:stop": "docker stop api"
+  },
+  "keywords": [],
+  "author": "Andranik Virabyan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.0.4",
+    "nodemon": "^3.1.7",
+    "validate.js": "^0.13.1"
+  }
+}
